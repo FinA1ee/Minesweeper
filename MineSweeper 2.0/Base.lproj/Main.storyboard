@@ -1,24 +1,1012 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Game PlayUI-->
+        <scene sceneID="Obe-Aq-cR5">
+            <objects>
+                <viewController id="ovL-4S-LSH" customClass="GamePlayUI" customModule="MineSweeper_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWO-qh-TZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBs-rG-yoq" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="220" y="536" width="114" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <state key="normal" title="Flag">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="setFlag:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Ax5-Kv-eOe"/>
+                                    <action selector="setFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yWI-bb-Ymq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtw-PF-PiX" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="40" y="536" width="114" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <state key="normal" title="Reveal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="setReveal:" destination="ovL-4S-LSH" eventType="touchUpInside" id="tyt-MB-FPe"/>
+                                    <action selector="setReveal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVX-SW-FLL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rB-yh-Fbp" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="7iK-It-gBr"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9kF-Ux-J7a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-dr-p7H" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ve-Lt-P30"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Zsl-he-7ZZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHo-ws-CWu" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="8Wy-eN-yo3"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8oj-Ep-dqp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-I6-8ro" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="brb-GQ-ubs"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nu8-VL-KRB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-JC-4PI" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSG-Hh-ROq"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="u7Q-Of-dv3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-tD-6sm" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="3Ec-uw-UNv"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjg-D2-a3c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-US-Oir" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDS-jL-3Xf"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="kOj-6E-ycu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGJ-Go-lnh" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KqE-iJ-Zxo"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="iht-ST-PXl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-fb-Yix" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="cnm-Fw-xqU"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTq-xx-Ifv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zT-3q-Kqb" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C7e-2c-iTQ"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="bmw-Vl-f8r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlE-Eu-Lc8" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LVy-PC-AkW"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="MqO-Jx-mZg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiN-Ql-k9r" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Btx-Jp-bFT"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="lPP-9e-LQH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="15" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF5-Hj-zox" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="RlC-Rc-Dgb"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gkt-39-qKN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="16" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmQ-lr-pZN" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="RvQ-7i-Ii0"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UnC-Bg-bn8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="17" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8M-LV-i52" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Ckq-dA-cAf"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bE2-xO-p6l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="18" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-pX-mlE" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AX6-uc-HXk"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="kcJ-fv-7ky"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="20" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-YQ-edB" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IKn-as-MjM"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="QnH-KZ-YTf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="21" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNX-sS-SQn" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gP6-wo-WNN"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="vEt-hB-MAk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="22" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bs-MF-F5s" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="P0e-wR-RoD"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eaD-bp-MKq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="23" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7k-3E-NFS" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="a5V-OG-0sd"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ugI-YM-dtO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="24" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pij-v5-M86" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="IUp-2L-MgW"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dh2-xh-kcy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="25" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-O1-khw" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ga-5u-Nqf"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Gix-eT-kTL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="26" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6c-ok-gaX" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oag-yI-vfD"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Px5-Rv-Zrd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="27" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FU-py-pOY" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cge-6E-CXJ"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="q78-az-1Uy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="29" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-xT-87H" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCY-RL-MbX"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="jOk-5J-Uac"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="30" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BF-71-tsh" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="ScY-LB-sKH"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEr-94-5UN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="31" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COG-4b-ceH" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dg-GU-985"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="BGf-0B-txC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="32" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21P-ih-B1t" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Chq-pp-rwW"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="geO-sf-oIC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="33" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-wx-axc" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="CUD-lm-KFu"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PfZ-6y-Q8I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="34" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-yQ-chA" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzi-br-7nU"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="rnl-TK-QrX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="35" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j20-Pu-DH3" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O9e-3K-oOQ"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="ktB-bw-8BA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="36" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCS-Zt-z9j" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3H-Kf-dh3"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="rmb-Eo-9uE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="38" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-cV-6XP" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="fhr-YH-J4F"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSb-Qm-Vac"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="39" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUl-ZY-hRI" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lT-Fq-xYk"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="uTT-8g-P3q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="40" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmP-dB-veW" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="MYE-Xz-Voj"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bA4-Qa-hzU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="41" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLj-kP-vue" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="3bb-Q3-sme"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3m-qI-oqg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="42" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF2-yR-gdI" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="LQ0-O6-Y9q"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQf-i8-yfU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="43" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54C-kX-oeO" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YU5-Zl-sbi"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="jKR-cf-yqb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="44" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42m-1L-gpa" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFn-Kr-fVs"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="dQb-vZ-zM5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="45" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-gw-bwI" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5h2-Ma-A0t"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="BfB-Hr-mPL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="47" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-rY-Uj5" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCy-0N-JU4"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="xy4-nq-Dqr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="48" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6l-l8-ChJ" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOF-P7-T3H"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="b86-P8-bGu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="49" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuL-14-mLh" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2c-Ha-upl"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="XMd-ip-NWw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="50" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glm-Lj-Q1y" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="G5H-2B-IJ4"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1p-Bo-pgZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="51" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daT-s8-Lr2" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="db5-yV-H20"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFP-i1-ZJd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="52" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z2-EV-Teg" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="CgU-Xh-0dA"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ujA-ro-2OW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="53" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-uT-qhU" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qzn-5S-cde"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="pjP-qg-Shb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="54" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mf2-zg-DT6" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="XIJ-HO-nOm"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuC-Ir-BBP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="56" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZc-kL-LC6" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="0Bc-Rk-IBf"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdm-Ta-hn1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="57" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT2-rV-6Lo" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RiH-tJ-YOe"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="nyi-0L-B9c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="58" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjG-HD-cRk" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gli-gp-G1z"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="N1S-vp-ZXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="59" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a86-2n-YUu" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0C-Jh-qrO"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="kum-U8-G0h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="60" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9g-AZ-iV1" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="lRM-iD-BAs"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4h-an-wMk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="61" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zq-EA-VJN" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkm-UW-klF"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="wI8-gg-IKg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="62" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-mR-ULs" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yO-td-kOA"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="gVu-9B-ezc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="63" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sx-m7-SHa" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ffg-0C-CI2"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="LQl-hZ-NsD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="65" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NS6-Cy-vNC" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFR-xh-4Qh"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="aql-gf-wwB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="66" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pJ-KN-VZQ" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="L1n-K3-IjP"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMl-2N-Ilr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="67" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voq-Xd-A46" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24u-XK-mel"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Db6-Mz-dWo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="68" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rut-bo-lr8" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9b-w8-kGE"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="X94-in-BVM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="69" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bl-PE-66P" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NNa-LQ-pEc"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="hHi-Fq-jQR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="70" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfB-1U-Y5G" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnd-3V-9H5"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="khS-fa-baR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="71" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eik-0o-HHY" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ka8-FO-ZLO"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="lhP-uf-vVX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="72" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-ZJ-zHB" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Tlj-Pg-BVo"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kas-zg-NCC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="74" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOv-O0-CiK" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="83" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="O9P-A8-irf"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aIE-OW-hkv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="75" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-2S-f6q" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="113" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="520-eq-YIN"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D1s-YF-PqZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="76" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bca-oY-Z9h" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="143" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ff-9F-3Np"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="KO8-aP-LP5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="77" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lE-IW-G1I" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="173" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6vX-7h-GXe"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="wUu-zS-uBP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="78" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxX-As-9N8" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="202" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30Q-Z5-a8H"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="vDo-IX-SBO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="79" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-0E-lke" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="232" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="15M-HT-5bz"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uwm-9H-Ok3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="80" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byq-Zw-usp" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="262" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="1v7-HK-neN"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJg-vs-AkI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="81" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLI-2W-dBC" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="291" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rc-6F-BQa"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="S59-2J-m3H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2C-hm-hq0" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44b-YS-edf"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="9sH-st-ECi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-eE-eDy" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="220" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Mq-9s-SHf"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="klW-GH-UGl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="19" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTH-NW-s5w" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dg-ZX-CV4"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="XHI-aj-dAQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="28" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMr-0W-Zjk" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="HrH-NR-kaU"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8f-sJ-1dq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="37" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYi-34-y8C" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="2K9-cS-Nqa"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YqZ-jT-WKC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="46" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-hD-CKM" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="338" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Bqb-mZ-nmJ"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eht-et-C4l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="55" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ2-0n-WD2" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="368" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="FlH-VA-y27"/>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnA-3M-E5n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="64" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-va-kBX" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="398" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0a-N8-F9c"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="QrK-Aq-aX5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="73" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY4-5L-ptj" customClass="RoundedButton" customModule="MineSweeper_2_0" customModuleProvider="target">
+                                <rect key="frame" x="53" y="427" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="revealAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LI0-k3-zSD"/>
+                                    <action selector="revealAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="m3L-R4-8yu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: 00s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-1E-Fgh">
+                                <rect key="frame" x="232" y="106" width="127" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-xz-Vlk">
+                                <rect key="frame" x="152" y="77" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="smile_face"/>
+                                <connections>
+                                    <action selector="faceLogoButtonAction:" destination="ovL-4S-LSH" eventType="touchUpInside" id="Zj3-L9-dBc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click on Board to Select a Grid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-2G-JvA">
+                                <rect key="frame" x="113" y="634" width="143" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mine: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwN-Pm-PpH">
+                                <rect key="frame" x="56" y="106" width="84" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-Qy-xZc">
+                                <rect key="frame" x="16" y="31" width="31" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="setting"/>
+                                <connections>
+                                    <action selector="reCustomize:" destination="ovL-4S-LSH" eventType="touchUpInside" id="mOc-UD-nMN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jj1-Pb-S3R">
+                                <rect key="frame" x="332" y="31" width="27" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Exit" image="exit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6pj-kP-eLA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="d8k-sr-9nW"/>
+                    </view>
+                    <connections>
+                        <outlet property="faceLogoButton" destination="5Zq-xz-Vlk" id="a8i-6e-Vlw"/>
+                        <outlet property="label" destination="t6o-1E-Fgh" id="8gq-ZM-KEP"/>
+                        <outlet property="mineLeft" destination="ZwN-Pm-PpH" id="jVY-XL-dt0"/>
+                        <outlet property="timeLabel" destination="t6o-1E-Fgh" id="3lA-MQ-hPT"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Y2C-hm-hq0" collectionClass="NSMutableArray" id="82U-y6-rdp"/>
+                        <outletCollection property="gameBoardButtonArray" destination="2rB-yh-Fbp" collectionClass="NSMutableArray" id="93c-Zh-ouR"/>
+                        <outletCollection property="gameBoardButtonArray" destination="KRH-dr-p7H" collectionClass="NSMutableArray" id="GJ5-XQ-TvH"/>
+                        <outletCollection property="gameBoardButtonArray" destination="hHo-ws-CWu" collectionClass="NSMutableArray" id="1WE-VF-ST4"/>
+                        <outletCollection property="gameBoardButtonArray" destination="VVM-I6-8ro" collectionClass="NSMutableArray" id="TjU-tb-r4F"/>
+                        <outletCollection property="gameBoardButtonArray" destination="4e2-JC-4PI" collectionClass="NSMutableArray" id="qCn-B8-zg6"/>
+                        <outletCollection property="gameBoardButtonArray" destination="uEd-tD-6sm" collectionClass="NSMutableArray" id="kBc-sT-7pw"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Ph2-US-Oir" collectionClass="NSMutableArray" id="nyk-XF-KWH"/>
+                        <outletCollection property="gameBoardButtonArray" destination="DGJ-Go-lnh" collectionClass="NSMutableArray" id="MZB-KE-jQT"/>
+                        <outletCollection property="gameBoardButtonArray" destination="W5A-eE-eDy" collectionClass="NSMutableArray" id="590-mc-PAp"/>
+                        <outletCollection property="gameBoardButtonArray" destination="cbK-fb-Yix" collectionClass="NSMutableArray" id="Wrm-O0-RJM"/>
+                        <outletCollection property="gameBoardButtonArray" destination="5zT-3q-Kqb" collectionClass="NSMutableArray" id="COh-Nx-IjB"/>
+                        <outletCollection property="gameBoardButtonArray" destination="DlE-Eu-Lc8" collectionClass="NSMutableArray" id="sdh-sa-HPv"/>
+                        <outletCollection property="gameBoardButtonArray" destination="kiN-Ql-k9r" collectionClass="NSMutableArray" id="hP2-HT-bEn"/>
+                        <outletCollection property="gameBoardButtonArray" destination="rF5-Hj-zox" collectionClass="NSMutableArray" id="1pJ-mf-5cw"/>
+                        <outletCollection property="gameBoardButtonArray" destination="qmQ-lr-pZN" collectionClass="NSMutableArray" id="Gge-KE-b5e"/>
+                        <outletCollection property="gameBoardButtonArray" destination="A8M-LV-i52" collectionClass="NSMutableArray" id="Y9X-8f-Vkb"/>
+                        <outletCollection property="gameBoardButtonArray" destination="tgx-pX-mlE" collectionClass="NSMutableArray" id="Ahq-vs-uxc"/>
+                        <outletCollection property="gameBoardButtonArray" destination="NTH-NW-s5w" collectionClass="NSMutableArray" id="97b-aN-SVU"/>
+                        <outletCollection property="gameBoardButtonArray" destination="x2D-YQ-edB" collectionClass="NSMutableArray" id="ijb-qt-fur"/>
+                        <outletCollection property="gameBoardButtonArray" destination="MNX-sS-SQn" collectionClass="NSMutableArray" id="1RX-3B-7uD"/>
+                        <outletCollection property="gameBoardButtonArray" destination="1bs-MF-F5s" collectionClass="NSMutableArray" id="ONr-6v-6gG"/>
+                        <outletCollection property="gameBoardButtonArray" destination="s7k-3E-NFS" collectionClass="NSMutableArray" id="wNA-im-TkS"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Pij-v5-M86" collectionClass="NSMutableArray" id="Lee-YP-U4g"/>
+                        <outletCollection property="gameBoardButtonArray" destination="rsj-O1-khw" collectionClass="NSMutableArray" id="4OX-4G-SdL"/>
+                        <outletCollection property="gameBoardButtonArray" destination="i6c-ok-gaX" collectionClass="NSMutableArray" id="Yuz-ga-Qmx"/>
+                        <outletCollection property="gameBoardButtonArray" destination="3FU-py-pOY" collectionClass="NSMutableArray" id="ZOz-HY-kB1"/>
+                        <outletCollection property="gameBoardButtonArray" destination="uMr-0W-Zjk" collectionClass="NSMutableArray" id="MRb-Cg-7Ce"/>
+                        <outletCollection property="gameBoardButtonArray" destination="zWC-xT-87H" collectionClass="NSMutableArray" id="7cl-NJ-p7h"/>
+                        <outletCollection property="gameBoardButtonArray" destination="1BF-71-tsh" collectionClass="NSMutableArray" id="dja-qJ-e5d"/>
+                        <outletCollection property="gameBoardButtonArray" destination="COG-4b-ceH" collectionClass="NSMutableArray" id="1Az-FI-dqE"/>
+                        <outletCollection property="gameBoardButtonArray" destination="21P-ih-B1t" collectionClass="NSMutableArray" id="IGv-wi-cVs"/>
+                        <outletCollection property="gameBoardButtonArray" destination="3aJ-wx-axc" collectionClass="NSMutableArray" id="KFh-mc-h3J"/>
+                        <outletCollection property="gameBoardButtonArray" destination="A8W-yQ-chA" collectionClass="NSMutableArray" id="OFX-8V-2Gq"/>
+                        <outletCollection property="gameBoardButtonArray" destination="j20-Pu-DH3" collectionClass="NSMutableArray" id="5n7-Cc-DCG"/>
+                        <outletCollection property="gameBoardButtonArray" destination="XCS-Zt-z9j" collectionClass="NSMutableArray" id="rvT-GC-qCb"/>
+                        <outletCollection property="gameBoardButtonArray" destination="JYi-34-y8C" collectionClass="NSMutableArray" id="7jx-eX-nRa"/>
+                        <outletCollection property="gameBoardButtonArray" destination="fBg-cV-6XP" collectionClass="NSMutableArray" id="xhx-7k-gXr"/>
+                        <outletCollection property="gameBoardButtonArray" destination="PUl-ZY-hRI" collectionClass="NSMutableArray" id="9hn-Je-m5F"/>
+                        <outletCollection property="gameBoardButtonArray" destination="bmP-dB-veW" collectionClass="NSMutableArray" id="3di-Fd-bPm"/>
+                        <outletCollection property="gameBoardButtonArray" destination="HLj-kP-vue" collectionClass="NSMutableArray" id="uxg-Nd-lQV"/>
+                        <outletCollection property="gameBoardButtonArray" destination="MF2-yR-gdI" collectionClass="NSMutableArray" id="GNL-dK-3xt"/>
+                        <outletCollection property="gameBoardButtonArray" destination="54C-kX-oeO" collectionClass="NSMutableArray" id="x80-yG-xlh"/>
+                        <outletCollection property="gameBoardButtonArray" destination="42m-1L-gpa" collectionClass="NSMutableArray" id="sgU-iY-JKH"/>
+                        <outletCollection property="gameBoardButtonArray" destination="kzN-gw-bwI" collectionClass="NSMutableArray" id="ZDg-b6-8aS"/>
+                        <outletCollection property="gameBoardButtonArray" destination="hNg-hD-CKM" collectionClass="NSMutableArray" id="Ax0-GD-cEF"/>
+                        <outletCollection property="gameBoardButtonArray" destination="BYN-rY-Uj5" collectionClass="NSMutableArray" id="7c7-R3-aOM"/>
+                        <outletCollection property="gameBoardButtonArray" destination="P6l-l8-ChJ" collectionClass="NSMutableArray" id="iBI-hD-4eG"/>
+                        <outletCollection property="gameBoardButtonArray" destination="uuL-14-mLh" collectionClass="NSMutableArray" id="Ka9-bb-z2m"/>
+                        <outletCollection property="gameBoardButtonArray" destination="glm-Lj-Q1y" collectionClass="NSMutableArray" id="C5P-8T-SEA"/>
+                        <outletCollection property="gameBoardButtonArray" destination="daT-s8-Lr2" collectionClass="NSMutableArray" id="YmR-qP-ja8"/>
+                        <outletCollection property="gameBoardButtonArray" destination="0Z2-EV-Teg" collectionClass="NSMutableArray" id="bw6-lj-Q43"/>
+                        <outletCollection property="gameBoardButtonArray" destination="T9C-uT-qhU" collectionClass="NSMutableArray" id="BCa-ju-vHt"/>
+                        <outletCollection property="gameBoardButtonArray" destination="mf2-zg-DT6" collectionClass="NSMutableArray" id="Lxk-Ui-RQd"/>
+                        <outletCollection property="gameBoardButtonArray" destination="PZ2-0n-WD2" collectionClass="NSMutableArray" id="neq-OW-b8j"/>
+                        <outletCollection property="gameBoardButtonArray" destination="gZc-kL-LC6" collectionClass="NSMutableArray" id="DD0-6S-kE2"/>
+                        <outletCollection property="gameBoardButtonArray" destination="qT2-rV-6Lo" collectionClass="NSMutableArray" id="7fR-BB-vl1"/>
+                        <outletCollection property="gameBoardButtonArray" destination="hjG-HD-cRk" collectionClass="NSMutableArray" id="kZt-va-0B5"/>
+                        <outletCollection property="gameBoardButtonArray" destination="a86-2n-YUu" collectionClass="NSMutableArray" id="1Ki-VB-o1J"/>
+                        <outletCollection property="gameBoardButtonArray" destination="P9g-AZ-iV1" collectionClass="NSMutableArray" id="nMV-dL-4Bz"/>
+                        <outletCollection property="gameBoardButtonArray" destination="1Zq-EA-VJN" collectionClass="NSMutableArray" id="BYh-hc-gFs"/>
+                        <outletCollection property="gameBoardButtonArray" destination="FLb-mR-ULs" collectionClass="NSMutableArray" id="VRX-jI-Vlv"/>
+                        <outletCollection property="gameBoardButtonArray" destination="3sx-m7-SHa" collectionClass="NSMutableArray" id="X8o-8d-9sq"/>
+                        <outletCollection property="gameBoardButtonArray" destination="qfv-va-kBX" collectionClass="NSMutableArray" id="SjM-gy-KwD"/>
+                        <outletCollection property="gameBoardButtonArray" destination="NS6-Cy-vNC" collectionClass="NSMutableArray" id="F6E-iy-Msy"/>
+                        <outletCollection property="gameBoardButtonArray" destination="0pJ-KN-VZQ" collectionClass="NSMutableArray" id="Km8-bc-Qwr"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Voq-Xd-A46" collectionClass="NSMutableArray" id="wRm-GW-MUx"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Rut-bo-lr8" collectionClass="NSMutableArray" id="yeN-3N-kw0"/>
+                        <outletCollection property="gameBoardButtonArray" destination="3bl-PE-66P" collectionClass="NSMutableArray" id="BJt-c9-RSm"/>
+                        <outletCollection property="gameBoardButtonArray" destination="tfB-1U-Y5G" collectionClass="NSMutableArray" id="meb-nx-iAI"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Eik-0o-HHY" collectionClass="NSMutableArray" id="7so-bU-V8W"/>
+                        <outletCollection property="gameBoardButtonArray" destination="1Ga-ZJ-zHB" collectionClass="NSMutableArray" id="cz8-Gg-OEC"/>
+                        <outletCollection property="gameBoardButtonArray" destination="ZY4-5L-ptj" collectionClass="NSMutableArray" id="WLH-Ej-je8"/>
+                        <outletCollection property="gameBoardButtonArray" destination="AOv-O0-CiK" collectionClass="NSMutableArray" id="dXp-nH-d5U"/>
+                        <outletCollection property="gameBoardButtonArray" destination="xZX-2S-f6q" collectionClass="NSMutableArray" id="qdE-vc-w21"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Bca-oY-Z9h" collectionClass="NSMutableArray" id="fru-gZ-DDS"/>
+                        <outletCollection property="gameBoardButtonArray" destination="3lE-IW-G1I" collectionClass="NSMutableArray" id="6i8-3Y-KqA"/>
+                        <outletCollection property="gameBoardButtonArray" destination="CxX-As-9N8" collectionClass="NSMutableArray" id="k49-lr-sJ8"/>
+                        <outletCollection property="gameBoardButtonArray" destination="XKP-0E-lke" collectionClass="NSMutableArray" id="ZTF-U4-H2R"/>
+                        <outletCollection property="gameBoardButtonArray" destination="Byq-Zw-usp" collectionClass="NSMutableArray" id="iLJ-yr-j6V"/>
+                        <outletCollection property="gameBoardButtonArray" destination="pLI-2W-dBC" collectionClass="NSMutableArray" id="Q6H-QT-5o5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCQ-yc-Lnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.20000000000005" y="31.934032983508249"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MineSweeper_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhv-yq-K5w">
+                                <rect key="frame" x="-56" y="71" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6V-u4-WiM">
+                                <rect key="frame" x="-56" y="101" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TH-0e-KA3">
+                                <rect key="frame" x="-56" y="130" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="28" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-fX-rzn">
+                                <rect key="frame" x="-56" y="160" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="37" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-NO-N4H">
+                                <rect key="frame" x="-56" y="190" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="46" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ors-dw-VER">
+                                <rect key="frame" x="-56" y="219" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="55" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEn-3D-Tqr">
+                                <rect key="frame" x="-56" y="249" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="64" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL9-fs-ltc">
+                                <rect key="frame" x="-56" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" tag="73" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-b2-9cz">
+                                <rect key="frame" x="-56" y="308" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7H-FG-Eiy">
+                                <rect key="frame" x="123" y="395" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="logo"/>
+                                <connections>
+                                    <action selector="mainClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgk-a7-umK"/>
+                                    <segue destination="ovL-4S-LSH" kind="show" id="Uk1-Vc-L8w"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v1.00 Designed by Jack Zhu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyC-Y7-592">
+                                <rect key="frame" x="71" y="604" width="234" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="18"/>
+                                <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MineSweeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-wY-PG7">
+                                <rect key="frame" x="71" y="120" width="239" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exit" width="200" height="200"/>
+        <image name="logo" width="2000" height="2000"/>
+        <image name="setting" width="512" height="512"/>
+        <image name="smile_face" width="2000" height="2000"/>
+    </resources>
 </document>
